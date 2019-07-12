@@ -44,10 +44,10 @@ def sort_ab(a, b):
     else:
     	ia = 0
     	ib = 0
-    	
-	    while ia < len(a) and ib < len(b):
-	    	
-	    	if ia == len(a)-1:
+
+		while ia < len(a) and ib < len(b):
+
+			if ia == len(a)-1:
 	            new_list.append(b[ib])
 	            ib += 1
 
@@ -56,9 +56,9 @@ def sort_ab(a, b):
 	            ia += 1
 
 	        elif a[ia] < b[ib]:
-	            ia += 1
 	            new_list.append(a[ia])
-
+	            ia += 1
+	            
 	        elif a[ia] == b[ib]:
 	            new_list.append(a[ia])
 	            new_list.append(b[ib])
