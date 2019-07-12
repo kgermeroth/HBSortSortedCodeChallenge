@@ -31,19 +31,25 @@ def sort_ab(a, b):
     ia = 0
     ib = 0
 
-    for num in a:
-        if num < b[ib]:
+    while ia < len(a) and ib < len(b):
+        if ia == len(a)-1:
+            new_list.append(b[ib])
+            ib += 1
+        elif ib == len(b)-1:
+            new_list.append(a[ia])
             ia += 1
-            new_list.append(num)
-        elif num == b[ib]:
-            new_list.append(num)
-            new_list.append(num)
+        elif a[ia] < b[ib]:
+            ia += 1
+            new_list.append(a[ia])
+        elif a[ia] == b[ib]:
+            new_list.append(a[ia])
+            new_list.append(b[ib])
             ia += 1
             ib += 1
         else:
             new_list.append(b[ib])
             ib += 1
-
+    return new_list
 
 if __name__ == '__main__':
     import doctest
