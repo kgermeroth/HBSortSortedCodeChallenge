@@ -21,55 +21,55 @@ Check:
 
 
 def sort_ab(a, b):
-    """Given already-sorted lists, `a` and `b`, return sorted list of both.
+	"""Given already-sorted lists, `a` and `b`, return sorted list of both.
 
-    You may not use sorted() or .sort().
-    """
+	You may not use sorted() or .sort().
+	"""
 
-    new_list = []
+	new_list = []
 
-    ia = 0
-    ib = 0
+	ia = 0
+	ib = 0
 
-    if a == [] and b == []:
-    	return new_list
+	if a == [] and b == []:
+		return new_list
 
-    elif a == [] and b != []:
-    	new_list.extend(b)
-    	return new_list
+	elif a == [] and b != []:
+		new_list.extend(b)
+		return new_list
 
-    elif a != [] and b ==[]:
-    	new_list.extend(a)
-    	return new_list
-    else:
-    	ia = 0
-    	ib = 0
+	elif a != [] and b ==[]:
+		new_list.extend(a)
+		return new_list
+	else:
+		ia = 0
+		ib = 0
 
 		while ia < len(a) and ib < len(b):
 
 			if ia == len(a)-1:
-	            new_list.append(b[ib])
-	            ib += 1
+				new_list.append(b[ib])
+				ib += 1
 
-	        elif ib == len(b)-1:
-	            new_list.append(a[ia])
-	            ia += 1
+			elif ib == len(b)-1:
+				new_list.append(a[ia])
+				ia += 1
 
-	        elif a[ia] < b[ib]:
-	            new_list.append(a[ia])
-	            ia += 1
-	            
-	        elif a[ia] == b[ib]:
-	            new_list.append(a[ia])
-	            new_list.append(b[ib])
-	            ia += 1
-	            ib += 1
+			elif a[ia] < b[ib]:
+				new_list.append(a[ia])
+				ia += 1
 
-	        else:
-	            new_list.append(b[ib])
-	            ib += 1
+			elif a[ia] == b[ib]:
+				new_list.append(a[ia])
+				new_list.append(b[ib])
+				ia += 1
+				ib += 1
 
-    return new_list
+			else:
+				new_list.append(b[ib])
+				ib += 1
+
+	return new_list
 
 if __name__ == '__main__':
     import doctest
