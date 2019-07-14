@@ -28,9 +28,6 @@ def sort_ab(a, b):
 
 	new_list = []
 
-	ia = 0
-	ib = 0
-
 	# If both input lists are empty, just return the new_list
 	if a == [] and b == []:
 		return new_list
@@ -52,17 +49,17 @@ def sort_ab(a, b):
 		ib = 0
 
 		# keep the loop going until both lists have been fully iterated through
-		while ia < len(a) and ib < len(b):
+		while ia < len(a) or ib < len(b):
 
 			# if list a has been fully been fully iterated through add the next 
 			# item in list b to new list and increment index for b
-			if ia == len(a)-1:
+			if ia == len(a):
 				new_list.append(b[ib])
 				ib += 1
 			
 			# if list b has been fully been fully iterated through add the next 
 			# item in list a to new list and increment index for a
-			elif ib == len(b)-1:
+			elif ib == len(b):
 				new_list.append(a[ia])
 				ia += 1
 
